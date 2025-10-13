@@ -1,20 +1,28 @@
 package level1.ex2.Model;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculateIdTest {
 
-    @Test
-    void calculateIdChar() {
-        CalculateId calculateId = new CalculateId();
-        int[] numbers = {49296424,49296425,22222222,43176534,39753265,12345678,98765432,62938745,10293847,56473829};
-        char[] chars = new char[10];
-        for(int i = 0; i < numbers.length; i++){
-            chars[i] = calculateId.calculateIdChar(numbers[i]);
-        }
-        char[] correctChars = {'H','L','J','Z','L','Z','M','G','J','C'};
-        assertArrayEquals(chars, correctChars);
+    @ParameterizedTest
+    @CsvSource({
+            "49296424, H",
+            "49296425, L",
+            "22222222, J",
+            "43176534, Z",
+            "39753265, L",
+            "12345678, Z",
+            "98765432, M",
+            "62938745, G",
+            "10293847, J",
+            "56473829, C"
+    })
+    void givenTenIntegers_whenCalculateId_thenCalculateDniChar(int intDni, char expectedLetter) {
+        CalculateId calc = new CalculateId();
+        assertEquals(expectedLetter, calc.calculateIdChar(intDni));
     }
 }

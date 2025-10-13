@@ -17,48 +17,48 @@ class BookCollectionTest {
     }
 
     @Test
-    void testBookCollectionNotNull() {
+    void givenThreeBooks_whenAddBook_thenListNotEmpty() {
         assertNotNull(bookCollection.getBooks());
     }
 
     @Test
-    void testCorrectSizeAfterAddBook() {
+    void givenThreeBooks_whenAddBook_thenListCorrectSize() {
         assertEquals(3, bookCollection.getBooks().size());
     }
 
     @Test
-    void testBookInIndex() {
+    void givenThreeBooks_whenAddBook_thenBookCorrectIndex_() {
         assertEquals("B", bookCollection.getBooks().get(1).getName());
     }
 
     @Test
-    void testDuplicatesNotAllowed() {
+    void givenThreeBooks_whenAddBook_thenDuplicatesNotAllowed_() {
         bookCollection.addBook("A");
 
         assertEquals(3, bookCollection.getBooks().size());
     }
 
     @Test
-    void testFindBookByIndex() {
+    void givenThreeBooks_whenAddBook_thenDuplicatesNotAllowed() {
         assertEquals(bookCollection.findBookByIndex(1), bookCollection.getBooks().get(1).getName());
     }
 
     @Test
-    void testAddBookWithPos() {
+    void givenThreeBooks_whenAddBook_thenAddBookWithPos() {
         bookCollection.addBookWithPos(3, "D");
 
         assertNotEquals("D", bookCollection.getBooks().getFirst().getName());
     }
 
     @Test
-    void testRemoveBook() {
+    void givenThreeBooks_whenAddBook_thenRemoveBook() {
         bookCollection.removeBook("A");
 
         assertEquals(2, bookCollection.getBooks().size());
     }
 
     @Test
-    void testBooksAlwaysSorted() {
+    void givenThreeBooks_whenAddBook_thenBooksAlwaysSorted() {
         bookCollection.addBook("F");
         bookCollection.addBook("Z");
         bookCollection.addBook("E");
