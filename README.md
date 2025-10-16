@@ -1,6 +1,6 @@
 # 🧑‍💻 Task S1.04. Java Testing and Assertions  
 **Author:** David Rey  
-**Corrected by:**  
+**Corrected by:** Daniel Caldito Serrano ([dcs1990x](https://github.com/Viid21/S1_04_Testing/issues/1))  
 
 ## 📄 Description  
 This project includes several exercises organized by difficulty level, focusing on Java testing techniques using JUnit, AssertJ, and Test-Driven Development (TDD). The goal is to validate object behavior, exception handling, and collection integrity through structured unit tests.
