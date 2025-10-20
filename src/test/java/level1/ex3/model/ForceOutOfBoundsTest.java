@@ -8,11 +8,7 @@ class ForceOutOfBoundsTest {
     @Test
     public void testForceException(){
         ForceOutOfBounds force = new ForceOutOfBounds();
-        try {
-            force.forceException();
-            fail();
-        } catch (ArrayIndexOutOfBoundsException e) {
-            assertTrue(true);
-        }
+        assertThrows(ArrayIndexOutOfBoundsException.class, force::forceException);
+
     }
 }

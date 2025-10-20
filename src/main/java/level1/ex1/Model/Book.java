@@ -1,5 +1,7 @@
 package level1.ex1.Model;
 
+import java.util.Objects;
+
 public class Book {
     String name;
 
@@ -11,7 +13,15 @@ public class Book {
         return name;
     }
 
-    public boolean equals(Book book){
-        return this.name.equals(book.getName());
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return Objects.equals(name, book.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(name);
     }
 }

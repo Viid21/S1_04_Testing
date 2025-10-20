@@ -7,12 +7,7 @@ public class VerifyExceptionTest {
     @Test
     public void givenOneMethod_whenExceptionHappen_thenVerifyItHappens(){
         ForceException force = new ForceException();
+        assertThatThrownBy(force::forceException).isInstanceOf(ArrayIndexOutOfBoundsException.class);
 
-        try{
-            force.forceException();
-            failBecauseExceptionWasNotThrown(ArrayIndexOutOfBoundsException.class);
-        } catch (ArrayIndexOutOfBoundsException e) {
-            assertThat(e).isInstanceOf(ArrayIndexOutOfBoundsException.class);
-        }
     }
 }

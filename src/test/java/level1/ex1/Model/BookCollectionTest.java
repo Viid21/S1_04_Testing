@@ -19,6 +19,7 @@ class BookCollectionTest {
     @Test
     void givenThreeBooks_whenAddBook_thenListNotEmpty() {
         assertNotNull(bookCollection.getBooks());
+        assertFalse(bookCollection.getBooks().isEmpty());
     }
 
     @Test
